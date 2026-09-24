@@ -1,0 +1,87 @@
+{
+  "name": "Sainath Kumbar",
+  "title": "Software Engineer | Full-Stack & Database Systems",
+  "location": "Bengaluru, Karnataka, India",
+  "contact": {
+    "phone": "+91 7780668735",
+    "email": "sainath4525@gmail.com",
+    "linkedin": "https://linkedin.com/in/sainath-kumbar",
+    "github": "https://github.com/Sainath4525"
+  },
+  "education": [
+    {
+      "institution": "University of Visvesvaraya College of Engineering, Bengaluru",
+      "degree": "B.Tech in Computer Science and Engineering",
+      "score": "CGPA: 8.72",
+      "timeline": "2023 - 2027"
+    },
+    {
+      "institution": "Shahu Maharaj PU College, Bidar",
+      "degree": "Class XII – PCMB",
+      "score": "95.33%",
+      "timeline": "2023"
+    },
+    {
+      "institution": "Sangolli Rayanna High School, Bidar",
+      "degree": "Class X – SSLC",
+      "score": "88.16%",
+      "timeline": "2021"
+    }
+  ],
+  "skills": {
+    "languages": ["Java", "C", "JavaScript"],
+    "core_cs": [
+      "Data Structures and Algorithms",
+      "Object-Oriented Programming",
+      "DBMS",
+      "Operating Systems",
+      "Computer Networks"
+    ],
+    "web_development": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind CSS",
+      "React.js",
+      "Node.js",
+      "Express.js"
+    ],
+    "databases": ["MongoDB", "MySQL"],
+    "tools_and_platforms": ["Git", "GitHub", "VS Code", "AWS", "Linux"],
+    "spoken_languages": ["English", "Kannada", "Telugu", "Hindi"]
+  },
+  "projects": [
+    {
+      "name": "Dhara – Indian Folk Art Digital Marketplace",
+      "stack": ["React.js", "Material UI", "Node.js", "Express.js", "MongoDB", "JWT", "bcrypt"],
+      "highlights": [
+        "Developed a full-stack digital marketplace connecting Indian folk artists with buyers, featuring artist profiles, category-based artwork galleries, and real-time search and filtering for intuitive discovery.",
+        "Implemented secure JWT-based authentication with bcrypt password hashing and role-based access control, along with protected routes enabling artists to manage uploads and buyers to browse and interact seamlessly."
+      ]
+    },
+    {
+      "name": "SmartWallet – Wallet Management System",
+      "year": 2025,
+      "stack": ["Node.js", "Express.js", "MySQL", "JWT", "bcrypt"],
+      "highlights": [
+        "Architected a full-stack digital wallet supporting atomic peer-to-peer and merchant payments using MySQL stored procedures, preventing partial-update failures and duplicate charges through transaction-hash idempotency.",
+        "Designed 5+ MySQL triggers and stored procedures with wallet audit trails, bcrypt-based PIN hashing, JWT authentication, and role-based access control for users and merchants.",
+        "Built automated reward-expiry handling using MySQL scheduled events, monthly analytics with CSV export and chart visualizations, and hourly refund-retry logic."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "HTML & CSS Fundamentals",
+      "issuer": "DevTown"
+    },
+    {
+      "name": "AWS and Technical Skills",
+      "issuer": "Campus Champ"
+    },
+    {
+      "name": "Soft Skills",
+      "issuer": "Campus Champ"
+    }
+  ]
+}

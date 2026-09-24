@@ -1,0 +1,461 @@
+html, body {
+    overflow-x: hidden; /* Prevents horizontal swipe */
+}
+
+:root {
+    --bg-color: #121212;
+    --card-bg: rgba(0, 0, 0, 0.3);
+    --border-color: #333333;
+    --text-color: #e0e0e0;
+    --text-muted: #8b949e;
+    --link-color: #79a6d2;
+    --accent: #ffb86c;
+    --success: #7ee787;
+    --text-xs: clamp(0.8rem, 0.77rem + 0.12vw, 0.9rem);
+    --text-sm: clamp(0.9rem, 0.86rem + 0.18vw, 1rem);
+    --text-base: clamp(1rem, 0.94rem + 0.28vw, 1.12rem);
+    --text-lg: clamp(1.08rem, 1rem + 0.35vw, 1.24rem);
+    --text-xl: clamp(1.3rem, 1.15rem + 0.8vw, 1.7rem);
+    --text-2xl: clamp(1.55rem, 1.32rem + 1.4vw, 2.4rem);
+    --text-3xl: clamp(1.9rem, 1.55rem + 1.6vw, 2.7rem);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: var(--text-base);
+    line-height: 1.7;
+    max-width: 1000px; /* Keeps text centered and readable */
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+h1 {
+    font-size: var(--text-3xl) !important;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: var(--text-2xl) !important;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: var(--text-xl) !important;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: var(--text-lg) !important;
+    line-height: 1.25;
+    font-weight: 500;
+}
+
+p, li {
+    font-size: inherit;
+}
+
+main [style*="font-size"] {
+    font-size: var(--text-sm) !important;
+}
+
+main pre,
+main code,
+main [style*="font-family: monospace"] {
+    font-size: var(--text-sm) !important;
+    line-height: 1.6;
+}
+
+main section h1,
+main section h2,
+main section h3,
+main section h4,
+main article h1,
+main article h2,
+main article h3,
+main article h4 {
+    letter-spacing: normal;
+}
+
+main a[style*="font-size"] {
+    font-size: var(--text-lg) !important;
+}
+
+main p[style*="font-size"],
+main span[style*="font-size"] {
+    font-size: var(--text-sm) !important;
+}
+
+main button[style*="font-size"] {
+    font-size: var(--text-xs) !important;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header & Navigation Layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+nav a.active {
+    color: var(--link-color);
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--link-color);
+}
+
+nav a:hover {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* Social Icon Buttons in Header */
+.icon-container {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.icon-btn:hover {
+    border-color: var(--link-color);
+    color: var(--link-color);
+    background: rgba(121, 166, 210, 0.1);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Terminal Card Styling */
+.terminal-card {
+    background: var(--card-bg);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+    margin: 2rem 0;
+    line-height: 1.8;
+}
+
+.terminal-prompt-user {
+    color: var(--accent);
+}
+
+.terminal-prompt-path {
+    color: var(--link-color);
+}
+
+/* cURL Box Styling */
+.curl-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    gap: 1rem;
+}
+
+.curl-code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+    color: var(--link-color);
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.copy-btn {
+    background: transparent;
+    border: 1px solid #555;
+    color: var(--text-color);
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    border-color: var(--link-color);
+    color: var(--link-color);
+    background: rgba(121, 166, 210, 0.1);
+}
+
+/* Timeline Components */
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-left: 2px solid var(--border-color);
+    padding-left: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -29px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background: var(--border-color);
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.timeline-dot.active {
+    background: var(--link-color);
+    box-shadow: 0 0 8px rgba(121, 166, 210, 0.6);
+}
+
+.timeline-title {
+    color: #fff;
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.timeline-meta {
+    color: var(--text-muted);
+    font-family: monospace;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* Project Icons */
+.project-icon {
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-icon:hover {
+    color: #fff;
+    transform: scale(1.2) translateY(-2px);
+    text-decoration: none;
+}
+
+.live-icon:hover {
+    color: var(--link-color);
+}
+
+/* Tech Badges */
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.75rem 0 1rem 0;
+}
+
+.tech-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #2a2a2a;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: var(--link-color);
+}
+
+/* Floating Desktop Sidebars */
+.floating-left, .floating-right {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: none; /* Hidden on mobile/tablet, shown on wide desktop */
+}
+
+.floating-left {
+    left: 40px;
+}
+
+.floating-right {
+    right: 40px;
+}
+
+.social-links-vertical, .email-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-links-vertical a {
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links-vertical a:hover {
+    color: var(--link-color);
+    transform: translateY(-3px) scale(1.15);
+}
+
+.email-vertical a {
+    writing-mode: vertical-rl;
+    font-family: monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.email-vertical a:hover {
+    color: var(--link-color);
+    transform: translateY(-3px);
+}
+
+/* Symmetrical tracking lines for vertical sidebars */
+.social-links-vertical::before, .email-vertical::before,
+.social-links-vertical::after, .email-vertical::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 60px;
+    background-color: var(--border-color);
+}
+
+.social-links-vertical::before, .email-vertical::before {
+    margin-bottom: 1rem;
+}
+
+.social-links-vertical::after, .email-vertical::after {
+    margin-top: 1rem;
+}
+
+@media (min-width: 1200px) {
+    .floating-left, .floating-right {
+        display: block;
+    }
+}
+
+/* Hide On Mobile Utility */
+.hide-on-mobile {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .hide-on-mobile {
+        display: block;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+
+    h1 {
+        font-size: clamp(1.9rem, 1.35rem + 1.8vw, 2.45rem) !important;
+    }
+
+    h2 {
+        font-size: clamp(1.45rem, 1.15rem + 1.5vw, 2.1rem) !important;
+    }
+
+    h3 {
+        font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem) !important;
+    }
+
+    h4 {
+        font-size: clamp(1.02rem, 0.96rem + 0.45vw, 1.15rem) !important;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        border-bottom: none;
+    }
+
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    div[style*="monospace"],
+    pre,
+    code {
+        overflow-x: auto;
+        font-size: var(--text-xs) !important;
+    }
+
+    footer div {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem !important;
+    }
+}
