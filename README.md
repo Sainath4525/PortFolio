@@ -30,12 +30,6 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 Or simply open `index.html` directly in any web browser!
 
-## 🌐 Deploying to Vercel
-
-1. Push this repository to GitHub under [github.com/Sainath4525](https://github.com/Sainath4525).
-2. Go to [vercel.com](https://vercel.com/) and click **Add New Project**.
-3. Select your repository and click **Deploy**.
-4. Your site will be live instantly!
 
 ## 📄 Contact
 
